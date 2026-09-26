@@ -67,7 +67,7 @@ function setIcons(){
    Une fois votre script Google déployé, collez son URL ci-dessous
    entre les guillemets. Tant que c'est vide, l'application utilise un
    stockage de repli (voir plus bas).                                  */
-const SHEETS_API_URL = ""; // ex: "hhttps://script.google.com/macros/s/AKfycbzVHmysujVozK-S6yW7D3jolvLBPJUGdMF85NPKIoDfOnrzNKBvGhKZOBV4rkBu_kFGgw/exec"
+const SHEETS_API_URL = "hhttps://script.google.com/macros/s/AKfycbzVHmysujVozK-S6yW7D3jolvLBPJUGdMF85NPKIoDfOnrzNKBvGhKZOBV4rkBu_kFGgw/exec";
 
 /* ---------- Stockage (partagé entre enseignant et élèves) ----------
    Trois niveaux, du meilleur au plus limité :
