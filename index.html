@@ -1,21 +1,40 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#0b5ea8">
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="./style.css">
-  <title>Escalade Terminale | Suivi individuel</title>
-  
-  <link rel="manifest" href="./manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Escalade</title>
+<meta name="theme-color" content="#1F6B4A">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Escalade">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="description" content="Suivi individuel des élèves en escalade — 7 compétences, 9 séances.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMiIgZmlsbD0iIzFGNkI0QSIvPgo8cGF0aCBkPSJNOCA3NiBMMzQgMzggTDQ3IDU2IEw1OSAyOCBMOTMgNzYgWiIgZmlsbD0iI0YzRjhGNCIvPgo8cGF0aCBkPSJNMzQgMzggTDQ3IDU2IEw0MSA1NiBMMzEgNDQgWiIgZmlsbD0iIzE1M0YyRCIgb3BhY2l0eT0iMC40Ii8+CjxjaXJjbGUgY3g9IjY2IiBjeT0iNDIiIHI9IjQuMyIgZmlsbD0iI0YzRjhGNCIvPgo8cGF0aCBkPSJNNjYgNDYuNSBMNjIuNSA1OCBNNjYgNDYuNSBMNzIuNSA1NSBNNjYgNDkgTDU5LjUgNTIuNSBNNjYgNDkgTDc0IDQ0LjUiIHN0cm9rZT0iI0YzRjhGNCIgc3Ryb2tlLXdpZHRoPSIzLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj4KPHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIHJ4PSIyMiIgZmlsbD0iIzFGNkI0QSIvPgo8cGF0aCBkPSJNOCA3NiBMMzQgMzggTDQ3IDU2IEw1OSAyOCBMOTMgNzYgWiIgZmlsbD0iI0YzRjhGNCIvPgo8cGF0aCBkPSJNMzQgMzggTDQ3IDU2IEw0MSA1NiBMMzEgNDQgWiIgZmlsbD0iIzE1M0YyRCIgb3BhY2l0eT0iMC40Ii8+CjxjaXJjbGUgY3g9IjY2IiBjeT0iNDIiIHI9IjQuMyIgZmlsbD0iI0YzRjhGNCIvPgo8cGF0aCBkPSJNNjYgNDYuNSBMNjIuNSA1OCBNNjYgNDYuNSBMNzIuNSA1NSBNNjYgNDkgTDU5LjUgNTIuNSBNNjYgNDkgTDc0IDQ0LjUiIHN0cm9rZT0iI0YzRjhGNCIgc3Ryb2tlLXdpZHRoPSIzLjEiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app" class="app-shell"></div>
-  <div id="toast" class="toast" role="status" aria-live="polite"></div>
-
-  <script src="./script.js" defer></script>
+<div class="app-shell">
+  <div class="topbar">
+    <img id="topbarIcon" class="topbar-icon" alt="">
+    <div class="topbar-text">
+      <div class="app-name">Escalade</div>
+      <div class="app-sub" id="topbarSub">Suivi individuel — escalade</div>
+    </div>
+    <button class="topbar-action" id="topbarBtn" style="display:none;"></button>
+  </div>
+  <main id="app"></main>
+  <div class="footer-note">
+    <button id="rgpdLink" type="button">Confidentialité &amp; données (RGPD)</button>
+  </div>
+</div>
+<div id="modalRoot"></div>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
 </body>
 </html>
